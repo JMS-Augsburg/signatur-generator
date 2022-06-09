@@ -1,15 +1,31 @@
 <script setup>
 import Signature from "./components/Signature.vue";
+import Form from "./components/Form.vue"
+</script>
+<script>
+export default {
+  data() {
+    return {
+      formData: {
+        name: '',
+        email: '',
+        cell: '',
+        position: ''
+      }
+    }
+  }
+}
 </script>
 
 <template>
 
   <main style="padding: 4rem;">
+    <Form @change="(e) => formData = e"/>
     <Signature 
-      :name="'Maria Mustermensch'" 
-      :email="'maria.mustermensch@mail.example'" 
-      :cell="'+1 (234) 567 890'" 
-      :position="'Stabsstelle IT | Webentwicklung Signatur-Generator'" 
+      :name="formData.name" 
+      :email="formData.email" 
+      :cell="formData.cell" 
+      :position="formData.position" 
       />
   </main>
 </template>
