@@ -1,11 +1,7 @@
 <script>
 export default {
-    data() {
-        return {
-            privateFormData: {
-                name: ''
-            }
-        }
+    props: {
+        privateFormData: Object,
     },
     emits: ['change'],
     methods: {

@@ -4,13 +4,14 @@ import Form from "./components/Form.vue"
 </script>
 <script>
 export default {
+  inject: ['profile'],
   data() {
     return {
       formData: {
-        name: '',
-        email: '',
-        cell: '',
-        position: ''
+        name: `${this.profile.givenName} ${this.profile.surname}`,
+        email: this.profile.mail,
+        cell: this.profile.mobilePhone,
+        position: this.profile.jobTitle,
       }
     }
   }
@@ -20,7 +21,7 @@ export default {
 <template>
 
   <main style="padding: 4rem;">
-    <Form @change="(e) => formData = e"/>
+    <Form @change="(e) => formData = e" :privateFormData="formData"/>
     <Signature
       :name="formData.name"
       :email="formData.email"
