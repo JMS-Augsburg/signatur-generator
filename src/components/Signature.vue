@@ -6,7 +6,7 @@ export default {
         cell: String,
         position: String
     },
-    data() { 
+    data() {
         return {
             mobile: false,
             icons: [
@@ -62,9 +62,9 @@ export default {
                     <p style="font-weight: 600;">We are Junior Entrepreneurs</p>
                     <div style="display: flex; flex-direction: row;">
                         <a v-for="icon of icons" :href="icon.link" target="_blank">
-                            <img 
+                            <img
                                 style="padding: 2px; max-width: 42px;"
-                                :alt="icon.alt" :src="icon.src" 
+                                :alt="icon.alt" :src="icon.src"
                             />
                         </a>
                     </div>

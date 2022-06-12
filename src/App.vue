@@ -21,11 +21,11 @@ export default {
 
   <main style="padding: 4rem;">
     <Form @change="(e) => formData = e"/>
-    <Signature 
-      :name="formData.name" 
-      :email="formData.email" 
-      :cell="formData.cell" 
-      :position="formData.position" 
+    <Signature
+      :name="formData.name"
+      :email="formData.email"
+      :cell="formData.cell"
+      :position="formData.position"
       />
   </main>
 </template>
