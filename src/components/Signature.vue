@@ -34,6 +34,16 @@ export default {
             display: block;
         }`
     ],
+    methods: {
+        select() {
+            const range = new Range();
+            range.selectNodeContents(this.$refs.container);
+
+            const selection = document.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+        },
+    },
 }
 
 
@@ -41,7 +51,7 @@ export default {
 
 <template>
 
-    <div style="font-size: 9pt;">
+    <div style="font-size: 9pt;" ref="container" @click="select">
         <p style="font-size: 11pt; font-weight: 600;">{{name}}</p>
         <p>{{position}}</p>
         <p>Bundesverband Deutscher Studentischer Unternehmensberatungen (BDSU) e.V.</p>
