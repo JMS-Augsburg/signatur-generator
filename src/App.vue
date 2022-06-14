@@ -13,6 +13,14 @@ export default {
         position: this.profile.jobTitle,
       }
     }
+  },
+  methods: {
+    copy() {
+      // TODO: find a way to call select method without
+      // using private properties
+      this.$refs.preview._instance.exposed.select();
+      document.execCommand('copy');
+    },
   }
 }
 </script>
@@ -21,7 +29,9 @@ export default {
 
   <main style="padding: 4rem;">
     <Form @change="(e) => formData = e" :privateFormData="formData"/>
+    <button type="button" name="button" @click="copy">Copy</button>
     <signature-preview
+      ref="preview"
       :name="formData.name"
       :email="formData.email"
       :cell="formData.cell"

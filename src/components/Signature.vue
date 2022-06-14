@@ -34,6 +34,7 @@ export default {
             display: block;
         }`
     ],
+    expose: ['select'],
     methods: {
         select() {
             const range = new Range();
