@@ -67,4 +67,9 @@ p {
   font-weight: normal;
 }
 
+signature-preview {
+  margin-top: 1rem;
+  border: 1px solid;
+  padding: 0.5rem;
+}
 </style>
