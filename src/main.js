@@ -1,6 +1,9 @@
-import { createApp } from 'vue'
+import { createApp, defineCustomElement } from 'vue'
 import App from './App.vue'
+import Signature from './components/Signature.vue';
 import { MsalClient } from './lib/msal';
+
+window.customElements.define('signature-preview', defineCustomElement(Signature));
 
 const client = new MsalClient()
 

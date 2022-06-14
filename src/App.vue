@@ -1,5 +1,4 @@
 <script setup>
-import Signature from "./components/Signature.vue";
 import Form from "./components/Form.vue"
 </script>
 <script>
@@ -22,7 +21,7 @@ export default {
 
   <main style="padding: 4rem;">
     <Form @change="(e) => formData = e" :privateFormData="formData"/>
-    <Signature
+    <signature-preview
       :name="formData.name"
       :email="formData.email"
       :cell="formData.cell"

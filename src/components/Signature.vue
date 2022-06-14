@@ -27,7 +27,13 @@ export default {
                 },
             ]
         }
-    }
+    },
+    styles: [
+        `:host {
+            all: initial;
+            display: block;
+        }`
+    ],
 }
 
 
