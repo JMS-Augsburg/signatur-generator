@@ -54,14 +54,14 @@ export default {
 
     <div style="font-size: 9pt;" ref="container" @click="select">
         <p style="font-size: 11pt; font-weight: 600;">{{name}}</p>
-        <p>{{position}}</p>
+        <p v-if="position">{{position}}</p>
         <p>Bundesverband Deutscher Studentischer Unternehmensberatungen (BDSU) e.V.</p>
         <table style="font-size: 9pt" cellspacing="0" cellpadding="0">
-            <tr>
+            <tr v-if="cell">
                 <td style="width: 125px; padding: 0; border: 0">Telefon:</td>
                 <td>{{cell}}</td>
             </tr>
-            <tr>
+            <tr v-if="email">
                 <td>Mail:</td>
                 <td><a :href="'mailto:' + email" style="color: inherit;">{{email}}</a></td>
             </tr>
