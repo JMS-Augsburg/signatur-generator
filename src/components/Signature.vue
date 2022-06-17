@@ -52,10 +52,10 @@ export default {
 
 <template>
 
-    <div style="font-size: 9pt;" ref="container" @click="select">
-        <p style="font-size: 11pt; font-weight: 600;">{{name}}</p>
-        <p v-if="position">{{position}}</p>
-        <p>Bundesverband Deutscher Studentischer Unternehmensberatungen (BDSU) e.V.</p>
+    <div style="font-size: 9pt; font-family: Tahoma, sans-serif;" ref="container" @click="select">
+        <p style="font-size: 11pt; font-weight: 600; margin: 0; padding: 0;">{{name}}</p>
+        <p v-if="position" style="margin: 0; padding: 0;">{{position}}</p>
+        <p style="margin: 0; padding: 0;">Bundesverband Deutscher Studentischer Unternehmensberatungen (BDSU) e.V.</p>
         <table style="font-size: 9pt" cellspacing="0" cellpadding="0">
             <tr v-if="cell">
                 <td style="width: 125px; padding: 0; border: 0">Telefon:</td>
