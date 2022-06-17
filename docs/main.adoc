@@ -1,0 +1,10 @@
+= Dokumentation Signatur-Generator
+Roman Anasal <roman.anasal@bdsu.de>
+Mikel Münnekhoff <mikel.muennekhoff@bdsu.de>
+:revdate:
+:revnumber: {project-version}
+:example-caption!:
+:!webfonts:
+:toclevels: 2
+
+include::chapters/setup.adoc[]

@@ -1,3 +1,7 @@
+# Docs
+docs/*.pdf
+docs/*.html
+
 # Logs
 logs
 *.log

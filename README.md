@@ -27,3 +27,12 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Build docs
+
+```sh
+npm run docs
+```
+
+See result files in `docs` directory
+

@@ -1,4 +1,4 @@
 {
   "image": "node:lts-buster-slim",
-  "extensions": ["Vue.volar", "Vue.vscode-typescript-vue-plugin"]
+  "extensions": ["Vue.volar", "Vue.vscode-typescript-vue-plugin", "asciidoctor.asciidoctor-vscode"]
 }

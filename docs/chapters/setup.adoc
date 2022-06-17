@@ -1,0 +1,31 @@
+== Einrichtung des Generators
+
+=== Server
+
+==== Voraussetzung / Vorbereitung
+
+* Zu verwendende Domain
+* Webserver oder Hosting mit eingerichteter TLS-Verschlüsselung
+* MS365-Account
+
+==== Microsoft 365 / Azure AD
+
+* Im AzureAD Portal anmelden: https://aad.portal.azure.com[]
+* Neue App registrieren (Navigation: Azure Active Directory > App registrations)
+** Name wählen (wird Usern ggf. später angezeigt)
+** Account-Typ wählen. Da die Signatur nur vom eigenen Verein genutzt wird, ist die erste, strikteste Option (sog. Single Tenant) empfohlen
+** Ein Single Page Application einrichten und für die Redirect URI die gewünschte Domain verwenden
+image:images/aad_app_registration.png[width=80%]
+* Optional: Consent für die gesamte Organisation erteilen (sonst muss das jeder User einzeln tun)
+** In der eingerichteten App unter _API permissions_ prüfen, dass _User.Read_ (Delegated) voreingestellt ist.
+** Admin Consent einrichten
+image:images/aad_app_consent.png[]
+* In der Übersicht der App die Werte für die weitere Konfigurtion, Tenant-ID und App-ID, erhalten
+image:images/aad_app_overview.png[]
+
+==== Vorbereitung der statischen Inhalte
+
+* Anpassen der Signatur gemäß der eigenen Vorgaben. Hierzu ist die Komponente _Signature_ (`src/components/Signature.vue`) anzupassen.
+* Konfigurieren der Verbindung zu MS 365: Erstellen einer Datei `.env.local` und darin die in `.env` enthaltenen Werte überschreiben
+* Statische Inhalte mit `npm run build` erzeugen und per Webserver bereitstellen
+* Testen
