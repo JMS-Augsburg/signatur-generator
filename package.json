@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 4173",
-    "doc": "asciidoctor-web-pdf docs/main.adoc -o 'docs/Dokumentation Signatur-Generator'"
+    "doc": "asciidoctor-web-pdf docs/main.adoc -o 'docs/Dokumentation Signatur-Generator.pdf'"
   },
   "dependencies": {
     "@azure/msal-browser": "^2.25.0",

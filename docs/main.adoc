@@ -8,3 +8,5 @@ Mikel Münnekhoff <mikel.muennekhoff@bdsu.de>
 :toclevels: 2
 
 include::chapters/setup.adoc[]
+
+include::chapters/customizing.adoc[]

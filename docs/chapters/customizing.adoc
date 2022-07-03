@@ -1,0 +1,5 @@
+== Inhalte anpassen
+
+* Inhalte der Signatur in `Signature.vue` als HTML setzen
+* Link zum Bearbeiten des Profils in `App.vue` ersetzen
+* Auswählbare Positionen (Select-Box) in `Form.vue` anpassen
