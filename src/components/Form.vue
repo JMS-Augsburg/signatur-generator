@@ -46,21 +46,21 @@ export default {
             <tr>
                 <td><label>Vollständiger Name</label></td>
                 <td>
-                    <input name="name" v-validate v-model="privateFormData.name" @change="emitChange" required placeholder="Max Mustermann"/>
+                    <input name="name" v-validate v-model.trim="privateFormData.name" @change="emitChange" required placeholder="Max Mustermann"/>
                     <span class="error" v-if="errors.name">{{ errors.name }}</span>
                 </td>
             </tr>
             <tr>
                 <td><label>E-Mail-Adresse (Verein)</label></td>
                 <td>
-                    <input name="email" v-validate v-model="privateFormData.email" @change="emitChange" type="email" required placeholder="max.mustermann@bdsu.de"/>
+                    <input name="email" v-validate v-model.trim="privateFormData.email" @change="emitChange" type="email" required placeholder="max.mustermann@bdsu.de"/>
                     <span class="error" v-if="errors.email">{{ errors.email }}</span>
                 </td>
             </tr>
             <tr>
                 <td><label>Telefonnummer</label></td>
                 <td>
-                    <input name="phone" v-validate v-model="privateFormData.cell" @change="emitChange" type="tel" placeholder="+49 151 1234567890" pattern="^\+[ 0-9]+$" title="Handynummer inkl. internationaler Vorwahl"/>
+                    <input name="phone" v-validate v-model.trim="privateFormData.cell" @change="emitChange" type="tel" placeholder="+49 151 1234567890" pattern="^\+[ 0-9]+$" title="Handynummer inkl. internationaler Vorwahl"/>
                     <span class="error" v-if="errors.phone">
                         Handynummer inkl. internationaler Vorwahl, Format: +49 151 1234567890
                     </span>
@@ -70,7 +70,7 @@ export default {
                 <td><label>Position (Ressort/Stabsstelle/...)</label></td>
                 <!-- <td><input v-model="privateFormData.position" @change="emitChange" /></td> -->
                 <td>
-                    <select v-model="privateFormData.position" @change="emitChange">
+                    <select v-model.trim="privateFormData.position" @change="emitChange">
                         <option disabled value="">Bitte wählen</option>
                         <option v-for="position in positions" :value="position">{{ position }}</option>
                     </select>
