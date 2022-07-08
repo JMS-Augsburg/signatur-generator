@@ -10,7 +10,7 @@ export default {
         name: `${this.profile.givenName} ${this.profile.surname}`,
         email: this.profile.mail,
         cell: this.profile.mobilePhone,
-        position: this.profile.jobTitle = "", // init as empty string to pre-select disable select option
+        position: '', // init as empty string to pre-select disable select option
       }
     }
   },
