@@ -1,16 +1,24 @@
 import { createApp, defineCustomElement } from 'vue'
 import App from './App.vue'
 import Signature from './components/Signature.vue';
-import { MsalClient } from './lib/msal';
 
 window.customElements.define('signature-preview', defineCustomElement(Signature));
 
-const client = new MsalClient()
+async function loadProfile() {
+    if (!import.meta.env.VITE_MSAL_CLIENT_ID) {
+        return
+    }
 
-client.ready()
-  .then(() => client.fetchProfile())
-  .then(profile => {
+    const { MsalClient } = await import('./lib/msal');
+    const client = new MsalClient()
+    await client.ready()
+
+    return client.fetchProfile()
+}
+
+
+loadProfile().then(profile => {
     createApp(App)
-      .provide('profile', profile)
-      .mount('#app')
-  });
+        .provide('profile', profile)
+        .mount('#app')
+})

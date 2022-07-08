@@ -5,7 +5,17 @@ import Form from "./components/Form.vue"
 export default {
   inject: ['profile'],
   data() {
+    if (!this.profile) {
+      return {
+        showEditButton: false,
+        formData: {
+            position: '',
+        },
+      }
+    }
+
     return {
+      showEditButton: true,
       formData: {
         name: `${this.profile.givenName} ${this.profile.surname}`,
         email: this.profile.mail,
@@ -33,7 +43,7 @@ export default {
 
   <nav class="navbar">
     <span>BDSU Signatur-Generator</span>
-    <button class="edit-profile"><a href="https://eur.delve.office.com/?v=editprofile" target="_blank">Profil in MS365 bearbeiten</a></button>
+    <button class="edit-profile" v-if="showEditButton"><a href="https://eur.delve.office.com/?v=editprofile" target="_blank">Profil in MS365 bearbeiten</a></button>
   </nav>
 
   <main>
