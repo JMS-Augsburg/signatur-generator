@@ -42,53 +42,57 @@ export default {
 
 <template>
     <form action="#" ref="form" @submit.prevent="validate">
-        <table>
-            <tr>
-                <td><label>Vollständiger Name</label></td>
-                <td>
-                    <input name="name" v-validate v-model.trim="privateFormData.name" @change="emitChange" required placeholder="Max Mustermann"/>
-                    <span class="error" v-if="errors.name">{{ errors.name }}</span>
-                </td>
-            </tr>
-            <tr>
-                <td><label>E-Mail-Adresse (Verein)</label></td>
-                <td>
-                    <input name="email" v-validate v-model.trim="privateFormData.email" @change="emitChange" type="email" required placeholder="max.mustermann@bdsu.de"/>
-                    <span class="error" v-if="errors.email">{{ errors.email }}</span>
-                </td>
-            </tr>
-            <tr>
-                <td><label>Telefonnummer</label></td>
-                <td>
-                    <input name="phone" v-validate v-model.trim="privateFormData.cell" @change="emitChange" type="tel" placeholder="+49 151 1234567890" pattern="^\+[ 0-9]+$" title="Handynummer inkl. internationaler Vorwahl"/>
-                    <span class="error" v-if="errors.phone">
-                        Handynummer inkl. internationaler Vorwahl, Format: +49 151 1234567890
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td><label>Position (Ressort/Stabsstelle/...)</label></td>
-                <!-- <td><input v-model="privateFormData.position" @change="emitChange" /></td> -->
-                <td>
-                    <select v-model.trim="privateFormData.position" @change="emitChange">
-                        <option disabled value="">Bitte wählen</option>
-                        <option v-for="position in positions" :value="position">{{ position }}</option>
-                    </select>
-                </td>
-            </tr>
-        </table>
+        <label>Vollständiger Name</label>
+        <div class="form-control">
+            <input name="name" v-validate v-model.trim="privateFormData.name" @change="emitChange" required placeholder="Max Mustermann"/>
+            <span class="error" v-if="errors.name">{{ errors.name }}</span>
+        </div>
+
+        <label>E-Mail-Adresse (Verein)</label>
+        <div class="form-control">
+            <input name="email" v-validate v-model.trim="privateFormData.email" @change="emitChange" type="email" required placeholder="max.mustermann@bdsu.de"/>
+            <span class="error" v-if="errors.email">{{ errors.email }}</span>
+        </div>
+
+        <label>Telefonnummer</label>
+        <div class="form-control">
+            <input name="phone" v-validate v-model.trim="privateFormData.cell" @change="emitChange" type="tel" placeholder="+49 151 1234567890" pattern="^\+[ 0-9]+$" title="Handynummer inkl. internationaler Vorwahl"/>
+            <span class="error" v-if="errors.phone">
+                Handynummer inkl. internationaler Vorwahl, Format: +49 151 1234567890
+            </span>
+        </div>
+
+        <label>Position (Ressort/Stabsstelle/...)</label>
+        <div class="form-control">
+            <select v-model.trim="privateFormData.position" @change="emitChange">
+                <option disabled value="">Bitte wählen</option>
+                <option v-for="position in positions" :value="position">{{ position }}</option>
+            </select>
+        </div>
     </form>
 </template>
 
 <style scoped>
 
 form {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+}
+
+@media (max-width: 700px) {
+    form {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+
+    .form-control {
+        margin-bottom: 0.5rem;
+    }
 }
 
 input, select {
-    min-width: 50vh;
+    width: 100%;
     border: 1px solid #AAA;
     border-radius: 10px;
     padding: 5px 15px;
@@ -96,10 +100,6 @@ input, select {
 
 select {
     background-color: #BBFFDD;
-}
-
-tr>td:first-child {
-    padding: 0.5rem 5rem 0.5rem 0;
 }
 
 input:invalid, select:invalid {

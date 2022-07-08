@@ -110,7 +110,7 @@ button.copy-content {
   border: 0;
   border-radius: 10px;
   cursor: pointer;
-  padding: 10px auto;
+  padding: 10px;
 }
 
 button.copy-content:hover {
