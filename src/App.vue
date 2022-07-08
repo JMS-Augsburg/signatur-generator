@@ -16,6 +16,10 @@ export default {
   },
   methods: {
     copy() {
+      if (!this.$refs.form.validate()) {
+        return
+      }
+
       // TODO: find a way to call select method without
       // using private properties
       this.$refs.preview._instance.exposed.select();
@@ -38,7 +42,7 @@ export default {
       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
     </p>
 
-    <Form @change="(e) => formData = e" :privateFormData="formData"/>
+    <Form @change="(e) => formData = e" :privateFormData="formData" ref="form"/>
 
     <button class="copy-content" type="button" name="button" @click="copy">Signatur kopieren</button>
     <signature-preview
