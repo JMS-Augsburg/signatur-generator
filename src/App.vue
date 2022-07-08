@@ -29,7 +29,7 @@ export default {
 
   <nav class="navbar">
     <span>BDSU Signatur-Generator</span>
-    <button class="edit-profile"><a href="https://bdsuev-my.sharepoint.com/PersonImmersive.aspx" target="_blank">Profil in MS365 bearbeiten</a></button>
+    <button class="edit-profile"><a href="https://eur.delve.office.com/?v=editprofile" target="_blank">Profil in MS365 bearbeiten</a></button>
   </nav>
 
   <main>
