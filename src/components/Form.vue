@@ -4,6 +4,19 @@ export default {
         privateFormData: Object,
     },
     emits: ['change'],
+    data() {
+        return {
+            positions: [
+                'Ressort Öffentlichkeitsarbeit',
+                'Ressort Unternehmenskontakte',
+                'Ressort Netzwerk',
+                'Stabsstelle Eventmanagement',
+                'Stabsstelle IT',
+                'Ressort Qualitätsmanagement',
+                'Ressort Finanzen & Recht',
+            ],
+        };
+    },
     methods: {
         emitChange() {
             console.log('change emitted: %o', this.privateFormData)
@@ -33,13 +46,7 @@ export default {
                 <td>
                     <select v-model="privateFormData.position" @change="emitChange">
                         <option disabled value="">Bitte wählen</option>
-                        <option>Ressort Öffentlichkeitsarbeit</option>
-                        <option>Ressort Unternehmenskontakte</option>
-                        <option>Ressort Netzwerk</option>
-                        <option>Stabsstelle Eventmanagement</option>
-                        <option>Stabsstelle IT</option>
-                        <option>Ressort Qualitätsmanagement</option>
-                        <option>Ressort Finanzen & Recht</option>
+                        <option v-for="position in positions" :value="position">{{ position }}</option>
                     </select>
                 </td>
             </tr>
