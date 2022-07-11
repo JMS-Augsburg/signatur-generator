@@ -6,15 +6,47 @@ export default {
     emits: ['change'],
     data() {
         return {
-            positions: [
-                'Ressort Öffentlichkeitsarbeit',
-                'Ressort Unternehmenskontakte',
-                'Ressort Netzwerk',
-                'Stabsstelle Eventmanagement',
-                'Stabsstelle IT',
-                'Ressort Qualitätsmanagement',
-                'Ressort Finanzen & Recht',
+            roles: [
+                'Junior Consultant',
+                'Consultant',
+                'Expert Consultant',
+                'Senior Consultant',
             ],
+            positions: {
+                Mitglied: '',
+                Vorstand: 'Vorstand für',
+                Beirat: 'Beirat',
+                Mentor: 'Mentor',
+                Teamleitung: 'Head of',
+                'KC-Leitung': 'KC-Leitung',
+            },
+            departments: {
+                Allgemein: '',
+                Ressorts: {
+                    ÖA: 'Öffentlichkeitsarbeit',
+                    KuKo: 'Kundenkontakte',
+                    HR: 'Human Resources',
+                    'F&C': 'Finanzen und Controlling',
+                    'QWM': 'Qualitäts- und Wissensmanagement',
+                },
+                Teams: {
+                    'Public Marketing': 'Public Marketing',
+                    Sales: 'Sales',
+                    HRO: 'Human Resource Organization',
+                    IT: 'IT',
+                    'R&D': 'Research & Development',
+                    Finance: 'Finance',
+                    Legal: 'Legal',
+                    QMC: 'Quality Management & Controlling',
+                },
+                KCs: {
+                    'Process Management': 'Process Management',
+                    Strategy: 'Strategy',
+                    'Tech&BI': 'Technology & BI',
+                },
+            },
+            position: '',
+            department: '',
             errors: {},
         };
     },
@@ -33,6 +65,7 @@ export default {
             return this.$refs.form.reportValidity()
         },
         emitChange() {
+            this.privateFormData.position = [this.position, this.department].join(' ').trim()
             console.log('change emitted: %o', this.privateFormData)
             this.$emit('change', this.privateFormData)
         }
@@ -50,7 +83,7 @@ export default {
 
         <label for="email-input">E-Mail-Adresse (Verein)</label>
         <div class="form-control">
-            <input id="email-input" name="email" v-validate v-model.trim="privateFormData.email" @change="emitChange" type="email" required placeholder="max.mustermann@bdsu.de"/>
+            <input id="email-input" name="email" v-validate v-model.trim="privateFormData.email" @change="emitChange" type="email" required placeholder="max.mustermann@jms-augsburg.de"/>
             <span class="error" v-if="errors.email">{{ errors.email }}</span>
         </div>
 
@@ -62,11 +95,27 @@ export default {
             </span>
         </div>
 
-        <label for="position-input">Position (Ressort/Stabsstelle/...)</label>
+        <label for="position-input">Position</label>
+        <div class="form-control d-flex">
+            <select id="position-input" v-model.trim="position" @change="emitChange">
+                <option v-for="(value, position) in positions" :value="value">{{ position }}</option>
+            </select>
+
+            <select v-model.trim="department" @change="emitChange">
+                <template v-for="(group, groupName) in departments" >
+                    <optgroup v-if="typeof group === 'object'" :label="groupName">
+                        <option v-for="(value, department) in group" :value="value">{{ department }}</option>
+                    </optgroup>
+                    <option v-else :value="group">{{ groupName }}</option>
+                </template>
+            </select>
+        </div>
+
+        <label for="role-input">Karrierestufe</label>
         <div class="form-control">
-            <select id="position-input" v-model.trim="privateFormData.position" @change="emitChange">
+            <select id="role-input" v-model.trim="privateFormData.role" @change="emitChange">
                 <option disabled value="">Bitte wählen</option>
-                <option v-for="position in positions" :value="position">{{ position }}</option>
+                <option v-for="role in roles" :value="role">{{ role }}</option>
             </select>
         </div>
     </form>
@@ -96,6 +145,11 @@ input, select {
     border: 1px solid #AAA;
     border-radius: 10px;
     padding: 5px 15px;
+}
+
+.d-flex {
+    display: flex;
+    gap: 0.5rem;
 }
 
 input:invalid, select:invalid {

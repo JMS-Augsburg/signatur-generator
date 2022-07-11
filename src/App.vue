@@ -20,6 +20,7 @@ export default {
         name: `${this.profile.givenName} ${this.profile.surname}`,
         email: this.profile.mail,
         cell: this.profile.mobilePhone,
+        role: this.profile.jobTitle,
         position: '', // init as empty string to pre-select disable select option
       }
     }
@@ -61,6 +62,7 @@ export default {
       :email="formData.email"
       :cell="formData.cell"
       :position="formData.position"
+      :role="formData.role"
       />
   </main>
 </template>
