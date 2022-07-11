@@ -42,7 +42,7 @@ export default {
 <template>
 
   <nav class="navbar">
-    <span>BDSU Signatur-Generator</span>
+    <span>JMS Signatur&shy;generator</span>
     <button class="edit-profile" v-if="showEditButton"><a href="https://eur.delve.office.com/?v=editprofile" target="_blank">Profil in MS365 bearbeiten</a></button>
   </nav>
 
@@ -67,12 +67,12 @@ export default {
 
 <style>
 :root {
-  --theme-color: #84b93f;
-  --theme-color-rgb: 132,185,63;
+  --theme-color: #00355a;
+  --theme-color-rgb: 0,53,90;
   --theme-color-contrast: #ffffff;
   --theme-color-contrast-rgb: 255,255,255;
-  --theme-color-shade: #74a337;
-  --theme-color-tint: #90c052;
+  --theme-color-shade: #002f4f;
+  --theme-color-tint: #1a496b;
 }
 
 nav.navbar {
