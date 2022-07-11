@@ -50,7 +50,17 @@ export default {
   <main>
 
     <p class="info">
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      Bitte überprüfe und ergänze folgende Angaben für deine E-Mail-Signatur.
+      Die vorausgefüllten Daten wurden automatisch aus
+      <a href="https://eur.delve.office.com/?v=editprofile" target="_blank">deinem MS365-Profil geladen</a>.
+      Sollten hier Daten fehlen oder falsch sein - insbesondere deine Telefonnummer - aktualisiere diese zuerst in MS365.
+    </p>
+    <p class="info">
+      Sobald alle Angaben korrekt sind, klicke auf den Button "Signatur kopieren", um die fertige Signatur zu kopieren.
+      Anschließend kannst du sie in den Einstellungen deines E-Mail-Clients einfügen, z.B.
+      <a href="https://outlook.office.com/mail/options/mail/messageContent" target="_blank">hier in der Outlook Web App</a>.
+      Um Fehler in der Formatierung und in den enthaltenen Links zu verhindern, nimm bitte nach dem Kopieren
+      keine manuellen Änderungen an der fertigen Signatur mehr vor!
     </p>
 
     <Form @change="(e) => formData = e" :privateFormData="formData" ref="form"/>
