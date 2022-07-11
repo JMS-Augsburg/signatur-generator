@@ -66,11 +66,19 @@ export default {
 </template>
 
 <style>
+:root {
+  --theme-color: #84b93f;
+  --theme-color-rgb: 132,185,63;
+  --theme-color-contrast: #ffffff;
+  --theme-color-contrast-rgb: 255,255,255;
+  --theme-color-shade: #74a337;
+  --theme-color-tint: #90c052;
+}
 
 nav.navbar {
   width: 100%;
   padding: 1rem 4rem;
-  background-color: rgb(132, 185, 63);
+  background-color: var(--theme-color);
   display: flex;
   justify-content: space-between;
 }
@@ -78,25 +86,25 @@ nav.navbar {
 nav.navbar span {
   font-size: 24pt;
   font-weight: 600;
-  color: white;
+  color: var(--theme-color-contrast);
 }
 
 button.edit-profile {
   border: 0;
   border-radius: 10px;
-  background-color: white;
+  background-color: var(--theme-color-contrast);
   padding: 0 1rem;
   cursor: pointer;
 }
 
 button.edit-profile a {
-  color: rgb(132, 185, 63);
+  color: var(--theme-color);
   font-size: 14pt;
   text-decoration: none;
 }
 
 button.edit-profile:hover {
-  background-color: #BBFFDD;
+  background-color: rgba(var(--theme-color-contrast-rgb), 0.8);
 }
 
 p.info {
@@ -116,7 +124,8 @@ main > * {
 }
 
 button.copy-content {
-  background-color: rgba(132, 185, 63, 0.5);
+  background-color: var(--theme-color-shade);
+  color: var(--theme-color-contrast);
   border: 0;
   border-radius: 10px;
   cursor: pointer;
@@ -124,7 +133,7 @@ button.copy-content {
 }
 
 button.copy-content:hover {
-  background-color: rgba(132, 185, 63, 0.8)
+  background-color: var(--theme-color-tint);
 }
 
 body {

@@ -98,10 +98,6 @@ input, select {
     padding: 5px 15px;
 }
 
-select {
-    background-color: #BBFFDD;
-}
-
 input:invalid, select:invalid {
     border: 0.05rem red solid;
 }
