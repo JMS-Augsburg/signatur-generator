@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.signature.rule=Host(`${HOSTNAME}`)"
+      - "traefik.http.services.signature.loadbalancer.server.port=3000"
+    restart: always
+
+networks:
+  default:
+    external:
+      name: traefik_network
