@@ -7,7 +7,6 @@ export default {
   data() {
     if (!this.profile) {
       return {
-        showEditButton: false,
         formData: {
             position: '',
         },
@@ -15,7 +14,6 @@ export default {
     }
 
     return {
-      showEditButton: true,
       formData: {
         name: `${this.profile.givenName} ${this.profile.surname}`,
         email: this.profile.mail,
@@ -44,19 +42,13 @@ export default {
 
   <nav class="navbar">
     <span>JMS Signatur&shy;generator</span>
-    <button class="edit-profile" v-if="showEditButton"><a href="https://eur.delve.office.com/?v=editprofile" target="_blank">Profil in MS365 bearbeiten</a></button>
   </nav>
 
   <main>
 
     <p class="info">
       Bitte überprüfe und ergänze folgende Angaben für deine E-Mail-Signatur.
-      Die vorausgefüllten Daten wurden automatisch aus
-      <a href="https://eur.delve.office.com/?v=editprofile" target="_blank">deinem MS365-Profil geladen</a>.
-      Sollten hier Daten fehlen oder falsch sein - insbesondere deine Telefonnummer - aktualisiere diese zuerst in MS365.
-    </p>
-    <p class="info">
-      Sobald alle Angaben korrekt sind, klicke auf den Button "Signatur kopieren", um die fertige Signatur zu kopieren.
+      Sobald alle Angaben korrekt sind, klicke auf den Button "Signatur kopieren", um die fertige Signatur zu kopieren.<br>
       Anschließend kannst du sie in den Einstellungen deines E-Mail-Clients einfügen, z.B.
       <a href="https://outlook.office.com/mail/options/mail/messageContent" target="_blank">hier in der Outlook Web App</a>.
       Um Fehler in der Formatierung und in den enthaltenen Links zu verhindern, nimm bitte nach dem Kopieren
