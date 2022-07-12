@@ -1,9 +1,9 @@
 if (!import.meta.env.VITE_MSAL_CLIENT_ID) {
-  throw 'Please set the VITE_MSAL_CLIENT_ID configuration variable. See the .env file for more details.';
+  throw 'Please set the VITE_MSAL_CLIENT_ID configuration variable. See the .env.example file for more details.';
 }
 
 if (!import.meta.env.VITE_MSAL_AUTHORITY) {
-  throw 'Please set the VITE_MSAL_AUTHORITY configuration variable. See the .env file for more details.';
+  throw 'Please set the VITE_MSAL_AUTHORITY configuration variable. See the .env.example file for more details.';
 }
 
 export const msalConfig = {

@@ -26,6 +26,6 @@ image:images/aad_app_overview.png[]
 ==== Vorbereitung der statischen Inhalte
 
 * Anpassen der Signatur gemäß der eigenen Vorgaben. Hierzu ist die Komponente _Signature_ (`src/components/Signature.vue`) anzupassen.
-* Konfigurieren der Verbindung zu MS 365: Erstellen einer Datei `.env.local` und darin die in `.env` enthaltenen Werte überschreiben
+* Konfigurieren der Verbindung zu MS 365: Kopieren der Datei `.env.example` zu `.env` und darin die enthaltenen Werte anpassen
 * Statische Inhalte mit `npm run build` erzeugen und per Webserver bereitstellen
 * Testen
