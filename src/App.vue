@@ -55,10 +55,12 @@ export default {
       keine manuellen Änderungen an der fertigen Signatur mehr vor!
     </p>
 
+    <!---
     <p class="info">
       Hinweis: der allgemeine Teil der Vereinssignatur mit rechtlichen Hinweisen wird beim Versenden
       an externe Empfänger automatisch angefügt und muss daher nicht manuell eingerichtet werden.
     </p>
+    --->
 
     <Form @change="(e) => formData = e" :privateFormData="formData" ref="form"/>
 
