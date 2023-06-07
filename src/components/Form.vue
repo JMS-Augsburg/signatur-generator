@@ -15,6 +15,7 @@ export default {
             positions: {
                 Mitglied: '',
                 Vorstand: 'Vorstand für',
+                Ressortleiter: 'Ressortleitung für',
                 Beirat: 'Beirat',
                 Mentor: 'Mentor',
                 Teamleitung: 'Head of',

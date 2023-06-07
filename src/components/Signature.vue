@@ -91,7 +91,8 @@ export default {
             <img :src="logo" width="197" height="76">
         </p>
       <p style="margin-top: 1em; margin-bottom: 1em; font-family: Tahoma, sans-serif; font-size: 12px;">
-        Vertretungsberechtigter Vorstand: Maximilian Böck, Lukas Meder, Moritz Engelbrecht, Nicole Reiner, Philipp Geis<br>
+        Vertretungsberechtigter Vorstand: Bettina Höfle, Ole Hänsel, Jonas Dröse <br>
+        Ressortleitung: Amelie Hülsbusch, Britta Schneider <br>
         Registergericht: Amtsgericht Augsburg | Registernummer: VR 1694 | USt-ID DE 127507525<br>
         Qualitätssicherung:&nbsp;<a href="https://bdsu.de/">bdsu.de</a>
       </p>
