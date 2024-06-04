@@ -1,11 +1,8 @@
 vorstand:
-  - Bettina Höfle
-  - Ole Hänsel
-  - Jonas Dröse
+  - Regina Liebler
+  - Jakob Lohrum
+  - Patrick Schröppel
+  - Lisa Schmied
+  - Vivien Fünfer
 
-ressortleitung:
-  - Amelie Hülsbusch
-  - Britta Schneider
-
-# Falls es keine Ressortleitung gibt, dann folgendes verwenden:
-# ressortleitung: []
+ressortleitung: []
