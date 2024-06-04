@@ -13,8 +13,8 @@
   },
   "devDependencies": {
     "@asciidoctor/core": "^2.2.6",
-    "@vitejs/plugin-vue": "^2.3.3",
+    "@vitejs/plugin-vue": "^5.0.5",
     "asciidoctor-pdf": "^1.0.0-alpha.14",
-    "vite": "^2.9.9"
+    "vite": "^5.2.12"
   }
 }
