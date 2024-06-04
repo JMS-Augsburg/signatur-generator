@@ -1,0 +1,11 @@
+vorstand:
+  - Bettina Höfle
+  - Ole Hänsel
+  - Jonas Dröse
+
+ressortleitung:
+  - Amelie Hülsbusch
+  - Britta Schneider
+
+# Falls es keine Ressortleitung gibt, dann folgendes verwenden:
+# ressortleitung: []
