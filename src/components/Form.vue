@@ -1,4 +1,6 @@
 <script>
+import organization from "../../vereinsdaten.yaml"
+
 export default {
     props: {
         privateFormData: Object,
@@ -6,46 +8,9 @@ export default {
     emits: ['change'],
     data() {
         return {
-            roles: [
-                'Junior Consultant',
-                'Consultant',
-                'Expert Consultant',
-                'Senior Consultant',
-            ],
-            positions: {
-                Mitglied: '',
-                Vorstand: 'Vorstand für',
-                Ressortleiter: 'Ressortleitung für',
-                Beirat: 'Beirat',
-                Mentor: 'Mentor',
-                Teamleitung: 'Head of',
-                'KC-Leitung': 'KC-Leitung',
-            },
-            departments: {
-                Allgemein: '',
-                Ressorts: {
-                    ÖA: 'Öffentlichkeitsarbeit',
-                    KuKo: 'Kundenkontakte',
-                    HR: 'Human Resources',
-                    'F&C': 'Finanzen und Controlling',
-                    'QWM': 'Qualitäts- und Wissensmanagement',
-                },
-                Teams: {
-                    'Public Marketing': 'Public Marketing',
-                    Sales: 'Sales',
-                    HRO: 'Human Resource Organization',
-                    IT: 'IT',
-                    'R&D': 'Research & Development',
-                    Finance: 'Finance',
-                    Legal: 'Legal',
-                    QMC: 'Quality Management & Controlling',
-                },
-                KCs: {
-                    'Process Management': 'Process Management',
-                    Strategy: 'Strategy',
-                    'Tech&BI': 'Technology & BI',
-                },
-            },
+            roles: organization.karrierestufen,
+            positions: organization.rollen,
+            departments: organization.organisationseinheiten,
             position: '',
             department: '',
             errors: {},

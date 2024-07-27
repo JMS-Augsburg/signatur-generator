@@ -6,3 +6,40 @@ vorstand:
   - Vivien Fünfer
 
 ressortleitung: []
+
+karrierestufen:
+  - Junior Consultant
+  - Consultant
+  - Expert Consultant
+  - Senior Consultant
+
+rollen:
+  Mitglied: ''
+  Vorstand: 'Vorstand für'
+  Ressortleiter: 'Ressortleitung für'
+  Beirat: 'Beirat'
+  Mentor: 'Mentor'
+  Teamleitung: 'Head of'
+  Product Owner: 'Product Owner'
+
+organisationseinheiten:
+  Allgemein: ''
+  Ressorts:
+      ÖA: 'Öffentlichkeitsarbeit'
+      KuKo: 'Kundenkontakte'
+      HR: 'Human Resources'
+      F&C: 'Finanzen und Controlling'
+      QWM: 'Qualitäts- und Wissensmanagement'
+  Teams:
+      Public Marketing: 'Public Marketing'
+      Sales: 'Sales'
+      HRO: 'Human Resource Organization'
+      IT: 'IT'
+      R&D: 'Research & Development'
+      Finance: 'Finance'
+      Legal: 'Legal'
+      QMC: 'Quality Management & Controlling'
+  KCs:
+    Process Management: 'Process Management'
+    Research & Analytics: 'Research & Analytics'
+    Tech&BI: 'Technology & BI'
