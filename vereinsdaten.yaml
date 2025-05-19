@@ -1,9 +1,9 @@
 vorstand:
-  - Regina Liebler
-  - Jakob Lohrum
-  - Patrick Schröppel
-  - Lisa Schmied
-  - Vivien Fünfer
+  - Leon Wagner
+  - Silas Metschurat
+  - Louis Isichei
+  - Evelyn Schmidt
+  - Jordan Kohl
 
 ressortleitung: []
 
@@ -25,11 +25,11 @@ rollen:
 organisationseinheiten:
   Allgemein: ''
   Ressorts:
-      ÖA: 'Öffentlichkeitsarbeit'
-      KuKo: 'Kundenkontakte'
-      HR: 'Human Resources'
-      F&C: 'Finanzen und Controlling'
-      QWM: 'Qualitäts- und Wissensmanagement'
+      PR: 'Public Relations'
+      Sales: 'Sales'
+      HR: 'Human Relations'
+      F&C: 'Finance & Controlling'
+      QM: 'Quality Management'
   Teams:
       Public Marketing: 'Public Marketing'
       Sales: 'Sales'
